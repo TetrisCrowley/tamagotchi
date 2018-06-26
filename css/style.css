@@ -1,5 +1,9 @@
 body {
   text-align: center;
   flex-wrap: wrap;
+  font-family: 'Press Start 2P';
 }
 
+.feed, .play, .sleep {
+  font-family: 'Press Start 2P';
+}
