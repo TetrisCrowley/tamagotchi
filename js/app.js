@@ -1,37 +1,48 @@
 
-
-// create classes for hunger, sleepiness, boredom
-
-// Have a setInterval for age
-
-// time increases how quickly they die
-  // if hunger, sleepiness, or boredom hits 10
-  // pet dies 
-
-// looks left or right depending on happiness
+let time = 0;
 
 class Tamagotchi {
   constructor(name, age, hunger, boredom, sleepiness) {
-    this.name = prompt("Name this thing", this.name); //use a form
+    this.name = prompt("Name this thing", this.name);
     this.age = 0;
     this.hunger = 0;
     this.boredom = 0;
     this.sleepiness = 0;
   }
   feed(){
+    $('.feed').on('click', (e) => {
     console.log("nom nom nom" + reduceHunger);
 
+    });
   }
+
   play(){
+    $('.play').on('click', (e) => {
     console.log("I love you, human" + reduceBoredom);
 
+    });
   }
+
   sleep(){
+    $('.sleep').on('click', (e) => {
     console.log("ZZZZZZZZZ" + reduceSleepiness);
+
+    });
+  }
+
+  die(){
+    // if hunger, sleepiness, or boredom hits 10
+    console.log("I thought you loved me")
   }
 }
 
-const stanley = new Tamagotchi();
+const birth = new Tamagotchi();
+
+
+// Have a setInterval for time, age, stats
+
+// looks left or right depending on happiness
+  // makes sound?
 
 
 
@@ -40,7 +51,18 @@ const stanley = new Tamagotchi();
 
 
 
+// const setTimer = () => {
 
+//   const intervalId = setInterval(() => {
+//     time--;
+//     if(time === 0){
+//       clearInterval(intervalId); // stops timer
+//       round++
+//     }
+//     $('#timer').text('timer: ' + time + 's');
+
+//   }, 1000); // milliseconds
+// }
 
 
 
