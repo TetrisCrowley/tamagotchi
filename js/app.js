@@ -16,18 +16,19 @@ class Tamagotchi {
     // if >= 7, flash red
   }
   feed(){
+    this.hunger--;
     console.log(this.hunger);
-    // this.hunger--;
+    // make ceiling and floor for values
   }
 
   play(){
+    this.boredom--;
     console.log(this.boredom);
-    // this.boredom--;
   }
 
   sleep(){
+    this.sleepiness--;
     console.log(this.sleepiness);
-    // this.sleepiness--;
   }
    // one of three randomly goes up every 5 seconds
    // Math.floor(Math.random()); -- see poke-a-square
@@ -37,7 +38,7 @@ class Tamagotchi {
   }
 }
 
-const birth = new Tamagotchi();
+const stanley = new Tamagotchi();
 
 
 // Have a setInterval for time, age, stats
@@ -48,18 +49,19 @@ const birth = new Tamagotchi();
   // makes sound?
 
 $('.feed').on('click', (e) => {
-  console.log("nom nom nom"); 
-              //+ reduceHunger function by 1
+  console.log("nom nom nom");
+  stanley.feed(); 
 });
 
 $('.play').on('click', (e) => {
-  console.log("I love you, hu-man"); 
-              //+ reduceBoredom function by 1
+  console.log("I love you, hu-man");
+  stanley.play(); 
 });
 
 $('.sleep').on('click', (e) => {
-  console.log("ZZZZZZZZZ"); 
-              //+ reduceSleepiness function by 1
+  console.log("ZZZZZZZZZ");
+  stanley.sleep(); 
+              
 });
 
 
