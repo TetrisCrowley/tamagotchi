@@ -9,7 +9,13 @@ body {
 }
 
 .stats {
- /* display: flex;
-  flex-direction: column;
-  justify-content: flex-start;*/
+  text-align: left;
+}
+
+#timer {
+  /*move down, add padding?*/
+}
+
+.buttons {
+  /*increase size*/
 }

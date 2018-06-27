@@ -10,12 +10,17 @@
 </head>
 <body>
 
+ <form id="petName">
+    <input type="text" placeholder="enter a name" id="input-box">
+    <button type="submit">Give me a name!</button>
+</form>
+
 <div class="stats">
-  <h4>Name: </h4>
-  <h4>Age: </h4>
-  <h4>Hunger: </h4>
-  <h4>Boredom: </h4>
-  <h4>Sleepiness: </h4>
+  <h4 class="name">Name: </h4>
+  <h4 class="age">Age: 0</h4>
+  <h4 class="hunger">Hunger: 0</h4>
+  <h4 class="boredom">Boredom: 0</h4>
+  <h4 class="sleepiness">Sleepiness: 0</h4>
 </div>
 
 <div id="Display">
@@ -23,22 +28,23 @@
   <img src="https://pbs.twimg.com/media/Cht2-DwW0AEonx2.jpg">
 </div>
 
+<!-- egg image - http://neeshdental.com/wp-content/uploads/2017/04/1-1.png -->
+
+<!-- adolescent image - https://media.giphy.com/media/3o7ZerYeefOIXGl1Xq/giphy.gif -->
+
+<!-- baby for food - https://www.pregmed.org/wp-content/uploads/2015/04/A-Baby-Sitting.jpg -->
+
+<!-- tennis ball for play - http://media.supercheapauto.com.au/sports/images/zooms/518007-zoom.jpg -->
+
+
 <div>
-  <span id="timer">time: 0s</span>
+  <span id="timer">Time: 0s</span>
 </div>
 
-<div class="feed">
-  <button>FEED</button>
-</div>  
-
-<div class="play">
-  <button>PLAY</button>
-</div>  
-
-<div class="sleep">
-  <button>SLEEP</button>
-</div>
-
+<div class="buttons">
+  <button class="feed">FEED</button>
+  <button class="play">PLAY</button>
+  <button class="sleep">SLEEP</button>
 </div>
 
   <script src="js/app.js" type="text/javascript"></script>
