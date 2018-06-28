@@ -173,10 +173,9 @@ const statArray = ['hunger', 'boredom', 'sleepiness'];
           $('body').css('background-color', '#d763ae');
         } 
 
-        console.log(time);
     $('#timer').text('timer: ' + time + 's');
 
-  }, 500); // milliseconds
+  }, 250); // milliseconds
 }
 
 
