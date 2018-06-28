@@ -2,7 +2,16 @@ body {
   text-align: center;
   flex-wrap: wrap;
   font-family: 'Press Start 2P';
+  background-color: #c6c5c0;
 }
+
+.sprite {
+  height: 312.5px;
+  width: 250px;
+}
+
+/*CHANGE PICTURE SIZES*/
+
 
 .feed, .play, .sleep {
   font-family: 'Press Start 2P';
@@ -19,3 +28,7 @@ body {
 .buttons {
   /*increase size*/
 }
+
+/*.fed, .love, .snooze {
+  opacity: 0;
+}*/

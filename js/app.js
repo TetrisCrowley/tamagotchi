@@ -85,20 +85,25 @@ $('#petName').on('submit', (e) => {
 
 $('.feed').on('click', (e) => {
   console.log("nom nom nom");
+  // $('.fed').css('opacity', '1');
+  // display message, then .remove
   stanley.feed(); 
 });
 
 $('.play').on('click', (e) => {
   console.log("I love you, hooman");
+  // $('.love').css('opacity', '1');
+  // display message, then .remove
   stanley.play(); 
 });
 
 $('.sleep').on('click', (e) => {
   console.log("ZZZZZZZZZ");
+  // $('.snooze').css('opacity', '1');
+  // display message, then .remove
   stanley.sleep();       
 });
 
-// display for buttons
 
 
 const startTimer = () => {
@@ -133,16 +138,31 @@ const statArray = ['hunger', 'boredom', 'sleepiness'];
         stanley.age++
         $('.age').text("Age: " + stanley.age);
       }
-    // if (stanley.age >= 25){
-      // stanley.die();
-    // }
+      if (stanley.age < 5){
+          $('.sprite').attr('src', 'http://neeshdental.com/wp-content/uploads/2017/04/1-1.png');
+          $('body').css('background-color', '#c6c5c0');
+
+        } else if (stanley.age >= 15){
+          stanley.die();
+          alert("I am old, and now must die");
+          clearInterval(intervalId);
+
+        } else if (stanley.age >= 10){
+          $('.sprite').attr('class', 'adult');
+            $('.adult').attr('src', 'https://pbs.twimg.com/media/Cht2-DwW0AEonx2.jpg');
+            $('body').css('background-color', '#ffffff');
+          
+        } else if (stanley.age >= 5){
+          $('.sprite').attr('src', 'https://media.giphy.com/media/3o7ZerYeefOIXGl1Xq/giphy.gif');
+          $('body').css('background-color', '#d763ae');
+        } 
 
     $('#timer').text('timer: ' + time + 's');
 
     // since stats have changed
     // update them in html -- use updateStats() 
 
-  }, 1000); // milliseconds
+  }, 250); // milliseconds
 }
 
 
