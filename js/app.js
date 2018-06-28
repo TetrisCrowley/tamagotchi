@@ -1,12 +1,6 @@
 
-let time = 0;
-
-// use one picture until age 5, use that one until age 10, maybe another at 15?
 
 // animate eyes to follow cursor
-// death image
-// food image
-
 
 class Tamagotchi {
   constructor(petName) {
@@ -15,11 +9,12 @@ class Tamagotchi {
     this.hunger = 0;
     this.boredom = 0;
     this.sleepiness = 0;
-    // How to display these?
     // if >= 7, flash red
+
+      // if(this.hunger >= 7, this.boredom >= 7, this.sleepiness >= 7,).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+
   }
-  // make ceiling and floor for values
-  // can't go below 0. How?
+
   feed(){
     if(stanley.hunger > 0){
     this.hunger--;
@@ -51,11 +46,11 @@ class Tamagotchi {
   }
 
   die(timerId){
-    console.log("I thought you loved me")
+    console.log("I thought you loved me");
 
-    // tell the user (use jq to put a message or a prompt)
       // animation & message to user
   }
+
   updateStats(){
     $('.hunger').text("Hunger: " + this.hunger);
     console.log(this.hunger);
@@ -73,6 +68,7 @@ $('#petName').on('submit', (e) => {
   const userInput = $('#input-box').val(); //goes to constructor
   console.log(userInput);
   $('.name').text("Name: " + userInput);
+  $('.sprite').css('opacity', '1');
 
   stanley = new Tamagotchi(userInput, 0, 0, 0, 0);
   $('#petName').remove();
@@ -85,26 +81,32 @@ $('#petName').on('submit', (e) => {
 
 $('.feed').on('click', (e) => {
   console.log("nom nom nom");
-  // $('.fed').css('opacity', '1');
-  // display message, then .remove
+  $('#messages').text("NOM NOM NOM");
+  // $('.food img').attr('src', 'https://stickeroid.com/uploads/pic/full/43e5edd74f04b97370b64137564705dea027d0a8.png');
+  // change opacity
   stanley.feed(); 
 });
 
 $('.play').on('click', (e) => {
   console.log("I love you, hooman");
-  // $('.love').css('opacity', '1');
-  // display message, then .remove
+  $('#messages').text("I love you, hooman <3");
+  // $('.tennis img').attr('src', 'http://www.stickpng.com/assets/images/580b585b2edbce24c47b2b90.png');
+  // change opacity of ".tennis img" to 1
+  // setTimer(()=>{
+    // change opacity back to 0
+  // }, 2000)
   stanley.play(); 
 });
 
 $('.sleep').on('click', (e) => {
   console.log("ZZZZZZZZZ");
-  // $('.snooze').css('opacity', '1');
-  // display message, then .remove
+  $('#messages').text("ZZZZZZZZZ");
   stanley.sleep();       
 });
 
 
+
+let time = 0;
 
 const startTimer = () => {
 
@@ -123,7 +125,6 @@ const statArray = ['hunger', 'boredom', 'sleepiness'];
       } else if (stat === 'boredom'){
         stanley.boredom++;
         $('.boredom').text("Boredom: " + stanley.boredom);
-
       } else if(stat === 'sleepiness'){ 
         stanley.sleepiness++;
         $('.sleepiness').text("Sleepiness: " + stanley.sleepiness);
@@ -132,6 +133,7 @@ const statArray = ['hunger', 'boredom', 'sleepiness'];
       if(stanley.hunger === 10 || stanley.boredom === 10 || stanley.sleepiness === 10){
           clearInterval(intervalId);
           stanley.die();
+          // death image - src="https://i.imgur.com/OLvZdPi.jpg"
           alert("I thought you loved me");
       }
       if(time % 15 == 0){
@@ -151,16 +153,14 @@ const statArray = ['hunger', 'boredom', 'sleepiness'];
           $('.sprite').attr('class', 'adult');
             $('.adult').attr('src', 'https://pbs.twimg.com/media/Cht2-DwW0AEonx2.jpg');
             $('body').css('background-color', '#ffffff');
-          
+
         } else if (stanley.age >= 5){
           $('.sprite').attr('src', 'https://media.giphy.com/media/3o7ZerYeefOIXGl1Xq/giphy.gif');
           $('body').css('background-color', '#d763ae');
         } 
 
+        console.log(time);
     $('#timer').text('timer: ' + time + 's');
-
-    // since stats have changed
-    // update them in html -- use updateStats() 
 
   }, 250); // milliseconds
 }

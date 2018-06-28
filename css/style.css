@@ -5,13 +5,39 @@ body {
   background-color: #c6c5c0;
 }
 
+#display {
+  display: flex;
+}
+#display div {
+    width: 33%;
+
+}
+.tennis img, .food img {
+  opacity: 0;
+}
 .sprite {
   height: 312.5px;
   width: 250px;
+  opacity: 0;
+  padding: 0 0 20px 0;
+  align-content: center;
 }
 
-/*CHANGE PICTURE SIZES*/
+/*.tennis {
+  text-align: right;
+  /*visibility: hidden;*/
+/*}*/
 
+/*HOW DO CAN ANIMATE?*/
+
+/*.food {
+  text-align: left;
+  /*visibility: hidden;*/
+/*}*/
+
+#messages {
+  padding: 0 0 20px 0;
+}
 
 .feed, .play, .sleep {
   font-family: 'Press Start 2P';
@@ -22,13 +48,20 @@ body {
 }
 
 #timer {
-  /*move down, add padding?*/
+  padding: 0 0 20px 0;
 }
 
 .buttons {
+  padding: 20px 0 0 0;
   /*increase size*/
 }
 
-/*.fed, .love, .snooze {
-  opacity: 0;
-}*/
+.food img {
+  height: 100%;
+  max-height: 100px;
+}
+
+.tennis img {
+  height: 100%;
+  max-height: 100px;
+}
