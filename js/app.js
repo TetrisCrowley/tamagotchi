@@ -9,9 +9,13 @@ class Tamagotchi {
     this.hunger = 0;
     this.boredom = 0;
     this.sleepiness = 0;
-    // if >= 7, flash red
+    
+      // if >= 7, flash red
 
-      // if(this.hunger >= 7, this.boredom >= 7, this.sleepiness >= 7,).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+      // if(this.hunger >= 7, this.boredom >= 7, this.sleepiness >= 7,)
+      // 
+      // $('hunger').text.css('color', 'red');
+      // .fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
 
   }
 
@@ -47,7 +51,6 @@ class Tamagotchi {
 
   die(timerId){
     console.log("I thought you loved me");
-
       // animation & message to user
   }
 
@@ -82,25 +85,35 @@ $('#petName').on('submit', (e) => {
 $('.feed').on('click', (e) => {
   console.log("nom nom nom");
   $('#messages').text("NOM NOM NOM");
-  // $('.food img').attr('src', 'https://stickeroid.com/uploads/pic/full/43e5edd74f04b97370b64137564705dea027d0a8.png');
-  // change opacity
+  setTimeout(()=>{
+  $('#messages').text(" ");
+  }, 1000);
+  $('.food img').css('opacity', '1');
+  setTimeout(()=>{
+  $('.food img').css('opacity', '0');
+  }, 1000);
   stanley.feed(); 
 });
 
 $('.play').on('click', (e) => {
   console.log("I love you, hooman");
   $('#messages').text("I love you, hooman <3");
-  // $('.tennis img').attr('src', 'http://www.stickpng.com/assets/images/580b585b2edbce24c47b2b90.png');
-  // change opacity of ".tennis img" to 1
-  // setTimer(()=>{
-    // change opacity back to 0
-  // }, 2000)
+  setTimeout(()=>{
+  $('#messages').text(" ");
+  }, 1000);
+  $('.tennis img').css('opacity', '1');
+  setTimeout(()=>{
+  $('.tennis img').css('opacity', '0');
+  }, 1000);
   stanley.play(); 
 });
 
 $('.sleep').on('click', (e) => {
   console.log("ZZZZZZZZZ");
   $('#messages').text("ZZZZZZZZZ");
+  setTimeout(()=>{
+  $('#messages').text(" ");
+  }, 1000);
   stanley.sleep();       
 });
 
@@ -133,7 +146,7 @@ const statArray = ['hunger', 'boredom', 'sleepiness'];
       if(stanley.hunger === 10 || stanley.boredom === 10 || stanley.sleepiness === 10){
           clearInterval(intervalId);
           stanley.die();
-          // death image - src="https://i.imgur.com/OLvZdPi.jpg"
+          $('body').html("<img src='https://i.imgur.com/OLvZdPi.jpg' width='1650' height='824'>");
           alert("I thought you loved me");
       }
       if(time % 15 == 0){
@@ -145,9 +158,10 @@ const statArray = ['hunger', 'boredom', 'sleepiness'];
           $('body').css('background-color', '#c6c5c0');
 
         } else if (stanley.age >= 15){
-          stanley.die();
-          alert("I am old, and now must die");
           clearInterval(intervalId);
+          stanley.die();
+          $('body').html("<img src='https://i.imgur.com/OLvZdPi.jpg' width='1650' height='824'>");
+          alert("I am old, and now must die");
 
         } else if (stanley.age >= 10){
           $('.sprite').attr('class', 'adult');
@@ -162,7 +176,7 @@ const statArray = ['hunger', 'boredom', 'sleepiness'];
         console.log(time);
     $('#timer').text('timer: ' + time + 's');
 
-  }, 250); // milliseconds
+  }, 300); // milliseconds
 }
 
 
