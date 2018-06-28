@@ -176,7 +176,7 @@ const statArray = ['hunger', 'boredom', 'sleepiness'];
         console.log(time);
     $('#timer').text('timer: ' + time + 's');
 
-  }, 300); // milliseconds
+  }, 500); // milliseconds
 }
 
 
